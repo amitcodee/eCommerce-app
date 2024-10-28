@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+.instrument-sans {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.instrument {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.price {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.border-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.border-effect:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #1f1f1f;
+  transition: width 0.3s ease, left 0.3s ease, transform 0.3s ease;
+  margin: 2px 2px -2px 2px;
+  transform: translate(10%, -10%);
+}
+
+.border-effect:hover:before {
+  width: 80%;
+  left: 0;
+}
+
+/**.bg-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding:10px 10px  400px;
+}*/
+
+/* Keyframes for the outer dot (expanding and blinking) */
+@keyframes outer-blink {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5); /* Expand the outer dot */
+    opacity: 0.5;
+  }
+}
+
+/* Keyframes for the inner dot (shrinking and blinking) */
+@keyframes inner-blink {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.5); /* Shrink the inner dot */
+    opacity: 0.5;
+  }
+}
+
+/* Applying the animations */
+.animate-outer-blink {
+  animation: outer-blink 1.5s infinite;
+}
+
+.animate-inner-blink {
+  animation: inner-blink 1.5s infinite;
+}
+
+/* Apply dark mode styling for Ant Design Table */
+.dark-table .ant-table {
+  background-color: #616365; /* Dark background */
+  color: #ffffff; /* Light text color */
+}
+
+.dark-table .ant-table-thead > tr > th {
+  background-color: #caced3; /* Darker header */
+  color: #000;
+}
+.dark-table .ant-table-thead > tr > th:hover {
+  color: #000;
+}
+
+.dark-table .ant-table-tbody > tr > td {
+  background-color: #f4f5f6;
+  color: #000;
+}
+
+.dark-table .ant-table-tbody > tr:hover > td {
+  background-color: #4b5563;
+  color: #000; /* Hover effect */
+}
+
+.dark-table .ant-pagination-item {
+  background-color: #b1b3b6;
+  color: #fff;
+}
+
+.dark-table .ant-pagination-item-active {
+  background-color: #141414;
+  color: #ffffff;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 15s linear infinite;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+
+
+.df {display: flex}
+.aic {align-items: center}
+.jcc {justify-content: center}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  color: white;
+}
+
+.demo-wrapper {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  display: flex;
+  gap: 60px;
+}
+
+/* .wrapper img {
+  height: 400px;
+  width: 400px;
+} */
+.demo-gallery:not(.last) {
+  padding-bottom: 1rem;
+}
+
+.demo-text .text {
+  font-size: clamp(7rem, 10vw, 10rem); /* Adjusts the font size based on screen width */
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap; /* Prevents the text from wrapping */
+  padding: 0 1rem; /* Adds some padding for small screens */
+}
+
+/* Media query for extra small screens */
+@media (max-width: 600px) {
+  .demo-text .text {
+    font-size: clamp(4.5rem, 6vw, 6rem); /* Adjust font size for extra small screens */
+    padding: 0 0.5rem; /* Add padding for better spacing */
+  }
+}
